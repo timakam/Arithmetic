@@ -17,7 +17,9 @@ public class Calculator {
         } catch (UnknownLexicalSequenceException e) {
             System.out.println("Unknown lexical sequence near: " + e.getExpression().charAt(0));
         } catch (UnexpectedTokenException e) {
-            System.out.println("Unexpected token: " + e.getTok());
+            System.out.println("Unexpected token: " + e.getToken());
+        } catch (UnexpectedEndOfExpressionException e) {
+            System.out.println("Unexpected end of the expression near: " + e.getToken());
         }
     }
 }
