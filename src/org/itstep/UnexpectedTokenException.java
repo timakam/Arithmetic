@@ -17,7 +17,7 @@ public class UnexpectedTokenException extends Exception {
         this.tok = unexpected;
     }
 
-    public Token getTok() {
+    public Token getToken() {
         return tok;
     }
 }

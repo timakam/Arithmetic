@@ -17,7 +17,7 @@ public class UnexpectedEndOfExpressionException extends Exception {
         this.nextToken = nextToken;
     }
 
-    public Token getExpression() {
+    public Token getToken() {
         return nextToken;
     }
 }
