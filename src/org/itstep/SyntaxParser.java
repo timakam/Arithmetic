@@ -3,9 +3,12 @@ package org.itstep;
 import java.util.Deque;
 
 public class SyntaxParser {
-    public static int parseExpression(Deque<Token> tokens) throws UnexpectedTokenException {
+    public static int parseExpression(Deque<Token> tokens) throws UnexpectedTokenException, UnexpectedEndOfExpressionException {
         //Any expression is A, where A is a number of summation and subtraction
-        return parseAddition(tokens);
+        int res = parseAddition(tokens);
+        if (!tokens.isEmpty())
+            throw new UnexpectedEndOfExpressionException(tokens.peek());
+        return res;
     }
 
     //To find first element in summation/subtraction
