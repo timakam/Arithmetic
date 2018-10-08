@@ -1,23 +1,23 @@
 package org.itstep;
 
 public class UnexpectedEndOfExpressionException extends Exception {
-    private final CharSequence rest;
+    private final Token nextToken;
 
-    public UnexpectedEndOfExpressionException(CharSequence rest, Throwable cause, String message ) {
+    public UnexpectedEndOfExpressionException(Token nextToken, Throwable cause, String message ) {
         super(message, cause);
-        this.rest = rest;
+        this.nextToken = nextToken;
     }
 
-    public UnexpectedEndOfExpressionException(CharSequence rest, String message) {
+    public UnexpectedEndOfExpressionException(Token nextToken, String message) {
         super(message);
-        this.rest = rest;
+        this.nextToken = nextToken;
     }
 
-    public UnexpectedEndOfExpressionException(CharSequence rest) {
-        this.rest = rest;
+    public UnexpectedEndOfExpressionException(Token nextToken) {
+        this.nextToken = nextToken;
     }
 
-    public CharSequence getExpression() {
-        return rest;
+    public Token getExpression() {
+        return nextToken;
     }
 }
