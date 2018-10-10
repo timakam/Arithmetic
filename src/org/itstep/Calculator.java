@@ -2,7 +2,7 @@ package org.itstep;
 
 import java.nio.CharBuffer;
 import java.util.*;
-// Замечательный калькулятор
+
 public class Calculator {
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
