@@ -8,6 +8,12 @@ public class Calculator {
         try (Scanner sc = new Scanner(System.in)) {
             String expressionString = sc.nextLine();
 
+       //     while (true) {
+         //       if (!NoIdentifier(expressionString)) {
+      //              System.out.println("Введите значение ")
+    //            }
+         //   }
+
             System.out.println(
                     SyntaxParser.parseExpression(
                             LexicalParser.lexicalParserRec(CharBuffer.wrap(expressionString),new LinkedList<>())

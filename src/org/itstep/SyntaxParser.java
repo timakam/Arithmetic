@@ -1,4 +1,5 @@
 package org.itstep;
+import java.util.Scanner;
 
 import java.util.Deque;
 
@@ -77,6 +78,33 @@ public class SyntaxParser {
         switch (tok.tokType) {
             case NUMBER:
                 return Integer.parseInt(tok.data.toString());
+
+            case IDE:   {
+                Scanner scanner = new Scanner(System.in);
+                while(true) {
+                    boolean c = false;
+                    System.out.println("Enter identifier value: ");
+                    String userInput = scanner.nextLine();
+
+                    if (userInput.isEmpty()) {
+                        System.out.println("Input is empty");
+                        continue;
+                    }
+
+                    for (int i = 0; i < userInput.length(); i++) {
+                        char m = userInput.charAt(i);
+                        if (!Character.isDigit(m))
+                        {
+                            c  = true;
+                            break;
+                        }
+                    }
+
+                   if (c == true) continue;
+
+                   return Integer.parseInt(userInput);
+                }
+            }
 
             case OPEN:
                 int res = parseAddition(tokens);
